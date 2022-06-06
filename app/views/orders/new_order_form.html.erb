@@ -1,0 +1,113 @@
+<h1>Creating New Order Details</h1>
+
+  <div>
+    <%= form.label :order_no, style: "display: block" %>
+    <%= form.number_field :order_no %>
+  </div>
+
+  <div>
+    <%= form.label :date_of_order, style: "display: block" %>
+    <%= form.date_field :date_of_order %>
+  </div>
+
+  <div>
+    <%= form.label :order_status, style: "display: block" %>
+    <%= form.text_field :order_status %>
+  </div>
+
+  <div>
+    <%= form.label :billing_address, style: "display: block" %>
+   <%= form.select :order_id, Order.all.collect {|c| [c.billing_address, c.id]}, {}, class: "select" %>
+  </div> 
+
+  
+  <div>
+    <%= form.label :sku, style: "display: block" %>
+    <%= form.text_field :sku %>
+  </div>
+
+  <div>
+    <%= form.label :mrp, style: "display: block" %>
+    <%= form.text_field :mrp %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.label :discount, style: "display: block" %>
+    <%= form.text_field :discount %>
+  </div>
+
+  <div>
+    <%= form.label :net_price, style: "display: block" %>
+    <%= form.text_field :net_price %>
+  </div>
+
+  
+
+  <!-- Show -->
+  <table class="table">
+  <thead>
+    <tr>
+        <th>
+          <%= form.label :sku, style: "display: block" %>
+          <%= form.text_field :sku %>
+        </th>
+
+        <th>
+          <%= form.label :mrp, style: "display: block" %>
+          <%= form.text_field :mrp %>
+        </th>
+
+        <th>
+          <%= form.label :quantity, style: "display: block" %>
+          <%= form.number_field :quantity %>
+        </th>
+
+        <th>
+          <%= form.label :discount, style: "display: block" %>
+          <%= form.text_field :discount %>
+        </th>
+
+        <th>
+          <%= form.label :net_price, style: "display: block" %>
+          <%= form.text_field :net_price %>
+        </th>
+    </tr>
+  </thead>   
+  </table>
+
+  <!--
+    <table class="table">
+  <thead>
+    <tr>
+        <th>
+          <strong>Sku:</strong>
+          <%= product.sku %>
+        </th>
+
+        <th>
+          <strong>Mrp:</strong>
+          <%= product.mrp %>
+        </th>
+
+        <th>
+          <strong>Quantity:</strong>
+          <%= product.quantity %>
+        </th>
+
+        <th>
+          <strong>Discount:</strong>
+          <%= product.discount %>
+        </th>
+
+        <th>
+          <strong>Net price:</strong>
+          <%= product.net_price %>
+        </th>
+    </tr>
+  </thead>   
+  </table> -->
